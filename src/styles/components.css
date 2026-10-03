@@ -1,0 +1,282 @@
+/* ==========================================================================
+   STAR CHAIN LABS — REUSABLE COMPONENTS
+   Outlined architectural buttons, badges, cards, form elements
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  border-radius: var(--radius-xs);
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--transition-fast);
+}
+
+.btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* Button Variants */
+.btn-outline-light {
+  border-color: rgba(253, 251, 247, 0.3);
+  color: var(--text-light-primary);
+  background: transparent;
+}
+
+.btn-outline-light:hover {
+  border-color: var(--accent-brass);
+  color: var(--accent-brass);
+  background: rgba(197, 160, 89, 0.05);
+}
+
+.btn-outline-dark {
+  border-color: var(--border-light);
+  color: var(--text-dark-primary);
+  background: transparent;
+}
+
+.btn-outline-dark:hover {
+  border-color: var(--text-dark-primary);
+  background: rgba(28, 22, 19, 0.03);
+}
+
+.btn-brass {
+  background-color: var(--accent-brass);
+  color: var(--bg-mineral);
+  border-color: var(--accent-brass);
+}
+
+.btn-brass:hover {
+  background-color: var(--accent-brass-light);
+  border-color: var(--accent-brass-light);
+  box-shadow: 0 4px 16px var(--accent-brass-glow);
+}
+
+.btn-outline-brass {
+  border-color: var(--accent-brass);
+  color: var(--accent-brass);
+  background: transparent;
+}
+
+.btn-outline-brass:hover {
+  background-color: var(--accent-brass);
+  color: var(--bg-mineral);
+}
+
+.btn-small {
+  padding: 8px 16px;
+  font-size: var(--text-badge);
+}
+
+.btn-large {
+  padding: 16px 32px;
+  font-size: var(--text-body-sm);
+}
+
+/* --------------------------------------------------------------------------
+   Badges & Tags
+   -------------------------------------------------------------------------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: var(--text-badge);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-light);
+  background-color: transparent;
+  color: var(--text-dark-secondary);
+}
+
+.badge-dark {
+  border-color: var(--border-dark);
+  color: var(--text-light-secondary);
+  background: rgba(45, 36, 33, 0.4);
+}
+
+.badge-brass {
+  border-color: var(--border-brass-subtle);
+  color: var(--accent-brass);
+  background: var(--accent-brass-subtle);
+}
+
+.badge-olive {
+  border-color: var(--accent-olive);
+  color: var(--accent-olive);
+  background: var(--accent-olive-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   Cards Base
+   -------------------------------------------------------------------------- */
+.card {
+  border-radius: var(--radius-sm);
+  transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
+}
+
+.card-light {
+  background-color: var(--bg-linen);
+  border: 1px solid var(--border-light);
+}
+
+.card-light:hover {
+  border-color: var(--border-light-hover);
+  box-shadow: var(--shadow-subtle);
+}
+
+.card-dark {
+  background-color: var(--bg-mineral-card);
+  border: 1px solid var(--border-dark);
+}
+
+.card-dark:hover {
+  border-color: var(--border-dark-hover);
+  box-shadow: var(--shadow-dark-card);
+}
+
+/* --------------------------------------------------------------------------
+   Live Telemetry Indicator
+   -------------------------------------------------------------------------- */
+.telemetry-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: var(--text-badge);
+  letter-spacing: var(--tracking-wider);
+  color: var(--accent-sage);
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-sage);
+  position: relative;
+}
+
+.status-dot::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-sage);
+  opacity: 0.6;
+  animation: pulse-ring 2.4s infinite cubic-bezier(0.2, 0, 0, 1);
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(0.6); opacity: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Form Elements
+   -------------------------------------------------------------------------- */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-badge);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--text-light-secondary);
+  margin-bottom: 8px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 14px 16px;
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  background-color: rgba(28, 22, 19, 0.6);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xs);
+  color: var(--text-light-primary);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+
+.form-control:focus {
+  border-color: var(--accent-brass);
+  background-color: rgba(28, 22, 19, 0.9);
+}
+
+.form-control::placeholder {
+  color: var(--text-light-faint);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Pill Selectors */
+.pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill-option {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  font-family: var(--font-sans);
+  font-size: var(--text-caption);
+  font-weight: 500;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-dark);
+  color: var(--text-light-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  user-select: none;
+}
+
+.pill-option:hover {
+  border-color: var(--border-dark-hover);
+  color: var(--text-light-primary);
+}
+
+.pill-option.active,
+.pill-option input:checked + span {
+  border-color: var(--accent-brass);
+  color: var(--accent-brass);
+  background-color: var(--accent-brass-subtle);
+}
+
+.pill-option input {
+  display: none;
+}

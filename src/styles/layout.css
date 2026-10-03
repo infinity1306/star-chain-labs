@@ -1,0 +1,188 @@
+/* ==========================================================================
+   STAR CHAIN LABS — LAYOUT SYSTEM
+   Desktop 1440px / 80px margin, Tablet 768px / 40px, Mobile 390px / 24px
+   ========================================================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width-content);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--page-margin-desktop);
+  padding-right: var(--page-margin-desktop);
+}
+
+.container-narrow {
+  max-width: 1120px;
+}
+
+/* Section Spacing — Generous, architectural, intentional */
+.section {
+  position: relative;
+  padding-top: 128px;
+  padding-bottom: 128px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.section-dark {
+  background-color: var(--bg-mineral);
+  color: var(--text-light-primary);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.section-dark p {
+  color: var(--text-light-secondary);
+}
+
+.section-linen {
+  background-color: var(--bg-linen);
+}
+
+.section-beige {
+  background-color: var(--bg-beige);
+}
+
+.section-header {
+  margin-bottom: 64px;
+}
+
+.section-header.text-center {
+  text-align: center;
+}
+
+.section-header.text-center .eyebrow {
+  justify-content: center;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-h1);
+  line-height: var(--leading-heading);
+  letter-spacing: var(--tracking-tight);
+  color: inherit;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.section-desc {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-lg);
+  line-height: var(--leading-body);
+  max-width: 680px;
+}
+
+.section-dark .section-desc {
+  color: var(--text-light-secondary);
+}
+
+.section-linen .section-desc,
+.section-beige .section-desc {
+  color: var(--text-dark-secondary);
+}
+
+/* Split Layout (Two Column) */
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.split-layout.align-start {
+  align-items: start;
+}
+
+/* 3-Column Grid */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* 2-Column Grid */
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+/* 6-Column Grid (Process / Tech) */
+.grid-6 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+  .split-layout {
+    gap: 48px;
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 70px;
+  }
+  
+  .container {
+    padding-left: var(--page-margin-tablet);
+    padding-right: var(--page-margin-tablet);
+  }
+  
+  .section {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  
+  .section-header {
+    margin-bottom: 48px;
+  }
+  
+  .split-layout {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-3, .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .grid-6 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding-left: var(--page-margin-mobile);
+    padding-right: var(--page-margin-mobile);
+  }
+  
+  .section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+  
+  .section-header {
+    margin-bottom: 36px;
+  }
+  
+  .grid-6 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
